@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ImageView TomImage = findViewById(R.id.tomImage);
-        TomImage.animate().rotation(-180).setDuration(3000);
+        TomImage.animate().scaleY(0.5f).scaleX(0.5f).setDuration(3000);
     }
 
     public void eraseTom(View view) {
