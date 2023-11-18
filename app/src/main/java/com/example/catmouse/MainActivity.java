@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
-
+ boolean youSawTom = true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,9 +15,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void eraseTom(View view) {
-        ImageView TomImage = findViewById(R.id.tomImage);
-        TomImage.animate().alpha(0).setDuration(3000);
-        ImageView jerryImage = findViewById(R.id.jerryImage);
-        jerryImage.animate().alpha(1).setDuration(3000);
+        if(youSawTom) {
+            ImageView TomImage = findViewById(R.id.tomImage);
+            TomImage.animate().alpha(0).setDuration(3000);
+            ImageView jerryImage = findViewById(R.id.jerryImage);
+            jerryImage.animate().alpha(1).setDuration(3000);
+
+            youSawTom = false;
+        } else {
+            ImageView TomImage = findViewById(R.id.tomImage);
+            TomImage.animate().alpha(1).setDuration(3000);
+            ImageView jerryImage = findViewById(R.id.jerryImage);
+            jerryImage.animate().alpha(0).setDuration(3000);
+            youSawTom = true;
+        }
     }
 }
