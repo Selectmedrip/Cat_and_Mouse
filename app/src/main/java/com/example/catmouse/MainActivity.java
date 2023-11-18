@@ -12,23 +12,22 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ImageView TomImage = findViewById(R.id.tomImage);
-        TomImage.animate().scaleY(0.5f).scaleX(0.5f).setDuration(3000);
+
     }
 
     public void eraseTom(View view) {
         if(youSawTom) {
             ImageView TomImage = findViewById(R.id.tomImage);
-            TomImage.animate().alpha(0).setDuration(3000);
+            TomImage.animate().alpha(0).rotation(TomImage.getRotation() + 3600).scaleY(0).scaleX(0).setDuration(3000);
             ImageView jerryImage = findViewById(R.id.jerryImage);
-            jerryImage.animate().alpha(1).setDuration(3000);
+            jerryImage.animate().alpha(1).rotation(jerryImage.getRotation() + 3600).scaleY(1).scaleX(1).setDuration(3000);
 
             youSawTom = false;
         } else {
             ImageView TomImage = findViewById(R.id.tomImage);
-            TomImage.animate().alpha(1).setDuration(3000);
+            TomImage.animate().alpha(1).rotation(TomImage.getRotation() + 3600).scaleY(1).scaleX(1).setDuration(3000);
             ImageView jerryImage = findViewById(R.id.jerryImage);
-            jerryImage.animate().alpha(0).setDuration(3000);
+            jerryImage.animate().alpha(0).rotation(jerryImage.getRotation() + 3600).scaleY(0).scaleX(0).setDuration(3000);
             youSawTom = true;
         }
     }
