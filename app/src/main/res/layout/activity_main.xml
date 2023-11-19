@@ -37,4 +37,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/jerry" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="vklad"
+        tools:layout_editor_absoluteX="37dp"
+        tools:layout_editor_absoluteY="718dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
